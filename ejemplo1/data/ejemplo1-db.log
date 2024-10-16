@@ -1,0 +1,9 @@
+/*C4*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+create table Cliente (id bigint not null, apellido varchar(50), direccion varchar(200), email varchar(100), nombre varchar(50), telefono varchar(15), primary key (id))
+alter table Mascota add column cliente_id bigint
+alter table Mascota add constraint FKmsh81l3mlonf0rl5t4m0w3uu6 foreign key (cliente_id) references Cliente
+INSERT INTO CLIENTE VALUES(2,'L\u00f3pez','Reparto Chick','joselopez123@gmail.com','Jos\u00e9','1234-6989')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 3
+COMMIT
